@@ -6,12 +6,12 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:47 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 22:28:28 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 12:16:16 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PORNYGONZ_STRUCT_H
-# define PORNYGONZ_STRUCT_H
+#ifndef PORNYGONZ_STRUCTS_H
+# define PORNYGONZ_STRUCTS_H
 
 struct				s_uniform
 {
@@ -67,19 +67,19 @@ struct				s_line
 
 struct				s_buffer
 {
-	void	*b;
-	int		size;
+	void			*b;
+	int				size;
 };
 
-struct			s_pornygonz_core
+struct				s_pornygonz_core
 {
-	void		*init;
-	void		*window;
-	void		*surface;
-	void		*data;
-	int			attribs;
-	int			width;
-	int			height;
+	void			*init;
+	void			*window;
+	void			*surface;
+	void			*data;
+	int				attribs;
+	int				width;
+	int				height;
 };
 
 #endif

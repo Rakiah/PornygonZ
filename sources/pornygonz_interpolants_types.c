@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/06 16:24:55 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 12:23:25 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 t_interpolant	*ipl_depth_buffer(t_vertex *v[3])
 {
 	t_vector4f	*pos[3];
-	
+
 	pos[0] = &v[0]->pos;
 	pos[1] = &v[1]->pos;
 	pos[2] = &v[2]->pos;
@@ -26,7 +26,7 @@ t_interpolant	*ipl_depth_buffer(t_vertex *v[3])
 t_interpolant	*ipl_color(t_vertex *v[3], int component_index)
 {
 	t_vector4f	*pos[3];
-	
+
 	pos[0] = &v[0]->pos;
 	pos[1] = &v[1]->pos;
 	pos[2] = &v[2]->pos;
@@ -39,7 +39,7 @@ t_interpolant	*ipl_texture_coords(t_vertex *v[3], int component_index)
 {
 	float		val[3];
 	t_vector4f	*pos[3];
-	
+
 	pos[0] = &v[0]->pos;
 	pos[1] = &v[1]->pos;
 	pos[2] = &v[2]->pos;

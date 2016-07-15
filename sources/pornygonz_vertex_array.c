@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 23:17:01 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 13:29:29 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ unsigned int	pornygonz_create_vertex_array(void)
 
 void			pornygonz_delete_vertex_array(unsigned int id)
 {
-	t_list *vertices;
-	t_internal_core		*core;
+	t_list			*vertices;
+	t_internal_core	*core;
 
 	core = ((t_internal_core *)g_core.data);
 	vertices = core->vertex_buffers;
@@ -48,17 +48,7 @@ void			pornygonz_bind_vertex_array(unsigned int id)
 void			pornygonz_add_vertex_data(void *array, size_t array_size)
 {
 	t_buffer *buffer;
-	
+
 	buffer = ((t_internal_core *)g_core.data)->vertex_bind.buffer;
 	buffer_add_data(buffer, array, array_size);
-}
-
-void			pornygonz_enable_vertex_attribute(int attribute)
-{
-	g_core.attribs |= attribute;
-}
-
-void			pornygonz_disable_vertex_attribute(int attribute)
-{
-	g_core.attribs &= ~(attribute);
 }

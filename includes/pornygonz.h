@@ -6,26 +6,26 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:47 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 22:54:18 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 12:17:36 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PORNYGONZ_H
-#define PORNYGONZ_H
+# define PORNYGONZ_H
 
 # include <stdlib.h>
 
 typedef enum e_draw_type	t_draw_type;
 typedef enum e_element_type	t_element_type;
-typedef void (*t_vs_callback)(const float *in_vertex, float out_position[4]);
-typedef void (*t_fs_callback)(const float *in_vertex, float out_color[4]);
+typedef void	(*t_vs_callback)(const float *in_vertex, float out_position[4]);
+typedef void	(*t_fs_callback)(const float *in_vertex, float out_color[4]);
 
-enum e_draw_type
+enum	e_draw_type
 {
 	PORNYGONZ_TRIANGLES
 };
 
-enum e_element_type
+enum	e_element_type
 {
 	PORNYGONZ_SHORT,
 	PORNYGONZ_UNSIGNED_SHORT,
@@ -116,7 +116,8 @@ unsigned int	pornygonz_create_vertex_array(void);
 **		delete an array in the pornygonz memory
 **		return void
 **		parameters: (unsigned int)
-**		uid: typeof unsigned int, represent the index of the array you want to free
+**		uid: typeof unsigned int, represent the index of
+**		the array you want to free
 */
 void			pornygonz_delete_vertex_array(unsigned int uid);
 
@@ -173,7 +174,8 @@ unsigned int	pornygonz_create_index_array(void);
 **		delete a index array in the pornygonz memory
 **		return void
 **		parameters: (unsigned int)
-**		uid: typeof unsigned int, represent the index of the array you want to free
+**		uid: typeof unsigned int,
+**		represent the index of the array you want to free
 */
 void			pornygonz_delete_index_array(unsigned int uid);
 
@@ -214,7 +216,8 @@ unsigned int	pornygonz_create_texture(int width, int height, int bpp);
 **		delete a texture in the pornygonz memory
 **		return void
 **		parameters: (unsigned int)
-**		uid: typeof unsigned int, represent the ID of the texture you want to free
+**		uid: typeof unsigned int, represent the ID of
+**		the texture you want to free
 */
 void			pornygonz_delete_texture(unsigned int uid);
 

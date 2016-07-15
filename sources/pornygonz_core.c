@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 23:11:24 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 13:19:11 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,6 @@ static t_internal_core	*internal_core_init(void)
 	return (core);
 }
 
-void					buffer_delete(t_buffer *buf)
-{
-	free(buf->b);
-	free(buf);
-}
-
-void					uniform_delete(t_uniform *uniform)
-{
-	free(uniform->name);
-	free(uniform);
-}
-
 static void				internal_core_destroy(void)
 {
 	t_internal_core *data;
@@ -57,18 +45,6 @@ static void				internal_core_destroy(void)
 	list_delete_inner(data->texture_buffers, (void (*)(void *))buffer_delete);
 	list_delete_inner(data->uniforms, (void (*)(void *))uniform_delete);
 	free(data);
-}
-
-void					buffer_add_data(t_buffer *buf, void *d, size_t s)
-{
-	void *tmp;
-
-	if (buf == NULL)
-		return ;
-	tmp = rstd_memjoin(buf->b, d, buf->size, s);
-	free(buf->b);
-	buf->b = tmp;
-	buf->size += s;
 }
 
 int						pornygonz_init(void)

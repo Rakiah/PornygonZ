@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pornygonz_defines.h                                :+:      :+:    :+:   */
+/*   pornygonz_attributes.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
+/*   By: bkabbas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/06 16:24:47 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/15 12:15:29 by bkabbas          ###   ########.fr       */
+/*   Created: 2016/07/15 13:25:56 by bkabbas           #+#    #+#             */
+/*   Updated: 2016/07/15 13:26:19 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PORNYGONZ_DEFINES_H
-# define PORNYGONZ_DEFINES_H
+#ifndef PORNYGONZ_ATTRIBUTES_H
+# define PORNYGONZ_ATTRIBUTES_H
 
-# define TRUE 1
-# define FALSE 0
+void			pornygonz_enable_vertex_attribute(int attribute);
+void			pornygonz_disable_vertex_attribute(int attribute);
 
 #endif

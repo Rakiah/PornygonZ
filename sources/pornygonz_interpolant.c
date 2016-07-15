@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/06 16:24:55 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 12:22:55 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ t_interpolant	*ipl_new(t_vector4f *pos[3], float v1, float v2, float v3)
 	return (ipl);
 }
 
-void		ipl_calculate_steps(t_interpolant *ipl,
-								t_vector4f *min,
-								t_vector4f *mid,
-								t_vector4f *max)
+void			ipl_calculate_steps(t_interpolant *ipl,
+									t_vector4f *min,
+									t_vector4f *mid,
+									t_vector4f *max)
 {
 	float inverse_dx;
 

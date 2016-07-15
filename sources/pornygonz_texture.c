@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 23:14:30 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 12:24:06 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void			pornygonz_bind_texture(unsigned int id)
 void			pornygonz_add_texture_data(void *array, size_t array_size)
 {
 	t_buffer *buffer;
-	
+
 	buffer = ((t_internal_core *)g_core.data)->texture_bind.buffer;
 	buffer_add_data(buffer, array, array_size);
 }

@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:47 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 20:58:28 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 13:14:32 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_pornygonz_core	g_core;
 
 int		pornygonz_create_window(int w, int h)
 {
-	SDL_Window *win;
-	SDL_Surface *surface;
-	t_internal_core *core;
+	SDL_Window		*win;
+	SDL_Surface		*surface;
+	t_internal_core	*core;
 
 	core = (t_internal_core *)g_core.data;
 	if ((win = SDL_CreateWindow("pornygonz",
@@ -48,10 +48,10 @@ void	pornygonz_destroy_window(void)
 
 void	pornygonz_clear(void)
 {
-	int		i;
-	int		j;
+	int				i;
+	int				j;
 	t_internal_core	*internal;
-	SDL_Surface	*surface;
+	SDL_Surface		*surface;
 
 	internal = (t_internal_core *)g_core.data;
 	surface = (SDL_Surface *)g_core.surface;
@@ -79,16 +79,4 @@ void	pornygonz_swap_buffer(void)
 void	*pornygonz_get_window(void)
 {
 	return (g_core.window);
-}
-
-t_vector4f	screen_coordinates_convert(t_vector4f vector)
-{
-	t_internal_core		*internal;
-
-	internal = (t_internal_core *)g_core.data;
-	vector = m4f_mul_vector(&internal->screen_matrix, vector);
-	vector.x /= vector.w;
-	vector.y /= vector.w;
-	vector.z /= vector.w;
-	return (vector);
 }

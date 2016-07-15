@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 23:17:07 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 12:18:59 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ unsigned int	pornygonz_create_index_array(void)
 
 void			pornygonz_delete_index_array(unsigned int id)
 {
-	t_list *indices;
+	t_list				*indices;
 	t_internal_core		*core;
 
 	core = ((t_internal_core *)g_core.data);

@@ -6,7 +6,7 @@
 #    By: bkabbas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/18 21:30:01 by bkabbas           #+#    #+#              #
-#    Updated: 2016/07/09 21:59:11 by Rakiah           ###   ########.fr        #
+#    Updated: 2016/07/15 13:27:55 by bkabbas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ SHADERS += pornygonz_uniforms.c
 ARRAYS += pornygonz_vertex_array.c
 ARRAYS += pornygonz_index_array.c
 ARRAYS += pornygonz_texture.c
+ARRAYS += pornygonz_attributes.c
 
 RENDERING += pornygonz_core.c
 RENDERING += pornygonz_window.c
@@ -71,7 +72,9 @@ RENDERING += pornygonz_rasterizer.c
 RENDERING += pornygonz_vertex.c
 RENDERING += pornygonz_interpolant.c
 RENDERING += pornygonz_line.c
+RENDERING += pornygonz_line_drawing.c
 RENDERING += pornygonz_clipper.c
+RENDERING += pornygonz_utils.c
 RENDERING += pornygonz_interpolants_types.c
 
 SOURCES += $(RENDERING)
@@ -80,9 +83,12 @@ SOURCES += $(SHADERS)
 
 INCLUDES += pornygonz.h
 INCLUDES += pornygonz_line.h
+INCLUDES += pornygonz_line_drawing.h
 INCLUDES += pornygonz_typedefs.h
 INCLUDES += pornygonz_structs.h
 INCLUDES += pornygonz_defines.h
+INCLUDES += pornygonz_utils.h
+INCLUDES += pornygonz_attributes.h
 INCLUDES += pornygonz_clipper.h
 INCLUDES += pornygonz_rasterizer.h
 INCLUDES += pornygonz_vertex.h

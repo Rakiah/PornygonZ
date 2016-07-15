@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 23:06:42 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 12:25:13 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 t_pornygonz_core	g_core;
 
-static int		calculate_vertex_size()
+static int		calculate_vertex_size(void)
 {
 	int		vertex_size;
 
@@ -27,7 +27,7 @@ static int		calculate_vertex_size()
 	return (vertex_size);
 }
 
-static			t_vertex	generate_vertex(void *data, int offset, int vertex_size)
+static t_vertex	generate_vertex(void *data, int offset, int vertex_size)
 {
 	t_vertex	vert;
 	int			pos;
@@ -93,6 +93,7 @@ void			pornygonz_draw_elements(t_draw_type draw_type,
 	data[1] = ((t_internal_core *)g_core.data)->index_bind.buffer;
 	i = first - 1;
 	while (++i < count)
-		vertices[i - first] = generate_vertex(data[0]->b, *((int *)(data[1]->b + (i * index_size))), vert_size);
+		vertices[i - first] = generate_vertex(data[0]->b, *((int *)(data[1]->b +
+											(i * index_size))), vert_size);
 	draw_verts_as_triangles(vertices, count);
 }

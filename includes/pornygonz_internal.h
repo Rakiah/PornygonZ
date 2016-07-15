@@ -6,7 +6,7 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:47 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/09 22:14:42 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 13:26:46 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@
 # include "pornygonz_defines.h"
 # include "pornygonz_typedefs.h"
 # include "pornygonz_structs.h"
+# include "pornygonz_utils.h"
 # include "pornygonz_clipper.h"
+# include "pornygonz_attributes.h"
 # include "pornygonz_rasterizer.h"
 # include "pornygonz_draw_types.h"
 # include "pornygonz_vertex.h"
 # include "pornygonz_line.h"
+# include "pornygonz_line_drawing.h"
 # include "pornygonz_interpolant.h"
 # include "pornygonz_interpolants_types.h"
 

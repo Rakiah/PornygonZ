@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pornygonz_draw_types.c                             :+:      :+:    :+:   */
+/*   pornygonz_attributes.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
+/*   By: bkabbas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/15 12:18:31 by bkabbas          ###   ########.fr       */
+/*   Created: 2016/07/15 13:15:57 by bkabbas           #+#    #+#             */
+/*   Updated: 2016/07/15 13:16:12 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 
 t_pornygonz_core	g_core;
 
-void	draw_verts_as_triangles(t_vertex *vertices, int size)
+void			pornygonz_enable_vertex_attribute(int attribute)
 {
-	int i;
+	g_core.attribs |= attribute;
+}
 
-	i = 0;
-	while (i <= size - 3)
-	{
-		process_polygon(vertices + i, vertices + i + 1, vertices + i + 2);
-		i += 3;
-	}
+void			pornygonz_disable_vertex_attribute(int attribute)
+{
+	g_core.attribs &= ~(attribute);
 }

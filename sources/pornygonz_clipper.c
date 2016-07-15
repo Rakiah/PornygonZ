@@ -6,12 +6,11 @@
 /*   By: Rakiah <bkabbas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 16:24:46 by Rakiah            #+#    #+#             */
-/*   Updated: 2016/07/07 00:27:32 by Rakiah           ###   ########.fr       */
+/*   Updated: 2016/07/15 12:22:31 by bkabbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pornygonz_clipper.h"
-
 
 t_list		*clip_triangle(t_vertex *v1, t_vertex *v2, t_vertex *v3)
 {
@@ -48,7 +47,8 @@ t_bool		clip_axis(t_list *vertices, t_list *tmp, int index)
 	return (TRUE);
 }
 
-t_vertex	*generate_lerped_vertex(t_vertex *v1, t_vertex *v2, float c1, float c2)
+t_vertex	*generate_lerped_vertex(t_vertex *v1, t_vertex *v2,
+									float c1, float c2)
 {
 	t_vector4f	pos;
 	t_vector4f	color;
@@ -68,7 +68,8 @@ t_vertex	*generate_lerped_vertex(t_vertex *v1, t_vertex *v2, float c1, float c2)
 	return (vertex_new(pos, color, tex_coords));
 }
 
-void		clip_polygon_index(t_list *vertices, t_list *result, int index, float side)
+void		clip_polygon_index(t_list *vertices, t_list *result,
+								int index, float side)
 {
 	t_vertex	*verts[2];
 	float		component[2];
@@ -79,11 +80,12 @@ void		clip_polygon_index(t_list *vertices, t_list *result, int index, float side
 	inside[0] = component[0] <= verts[0]->pos.w;
 	while ((verts[1] = list_next(vertices)) != NULL)
 	{
-		component[1] = ((float *)(&verts[1]->pos))[index] * side;
+		component[1] = verts[1]->pos.v[index] * side;
 		inside[1] = component[1] <= verts[1]->pos.w;
 		if (inside[1] ^ inside[0])
-			list_push_back(result, generate_lerped_vertex(verts[0], verts[1],
-														component[0], component[1]));
+			list_push_back(result,
+					generate_lerped_vertex(verts[0], verts[1],
+										component[0], component[1]));
 		if (inside[1])
 			list_push_back(result, vertex_new_cpy(verts[1]));
 		verts[0] = verts[1];
